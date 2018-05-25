@@ -1,0 +1,23 @@
+{
+  "name": "almost-there",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bottender": "^0.14.34"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuanlutw/Almost-there.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xuanlutw/Almost-there/issues"
+  },
+  "homepage": "https://github.com/xuanlutw/Almost-there#readme"
+}
