@@ -22,7 +22,6 @@ function find(keyword){
 }
 
 function chat(input){
-	// console.log(find(input))
 	if(find(input) === false) return ["Say something else!"]
 	return(res[find(input)])
 }
