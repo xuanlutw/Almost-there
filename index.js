@@ -88,7 +88,6 @@ bot.onEvent(async context => {
         console.log(reply);
         await context.sendText(reply[Math.ceil(Math.random() * reply.length)]);
     }
-    */
 });
 
 function broadcast(mes){
