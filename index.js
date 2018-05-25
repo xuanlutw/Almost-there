@@ -12,6 +12,8 @@ const bot = new LineBot({
   accessToken: config.accessToken,
 });
 
+let Ids = [];
+
 //=================PK===================
 const key = []
 const res = []
@@ -35,19 +37,31 @@ function chat(input){
 	if(find(input) === false) return ["Say something else!"]
 	return(res[find(input)])
 }
+
+function welcome(){
+	return "感謝您使用Weather x Health小幫手！我是您健康的守護者！您會在天氣開始變化時，收到精選的注意事項。另外，也可以跟我聊聊天喔！"
+}
+
+
+b = require('./activerespond-2.json')
+const content = []
+for(i in b['active'])for(j in b['active'][i]){
+	content.push(b['active'][i][j]['string'])
+}
+
+function news() {
+	return content[Math.floor((Math.random() * content.length) + 1)]
+}
 //======================================
 
 bot.onEvent(async context => {
     const userId = context.session.user.id;
-    const reply = chat(context.event.text);
-    console.log(reply);
-    await context.sendText(reply[Math.ceil(Math.random() * reply.length)]);
-    /* 
+
     //add new user
     if (context.event.isFollow){
-        await context.sendText('Hi,\n這是新北市政府農業局土石流守護神');
+        await context.sendText(welcome());
         Ids.push({'id': context.session.user.id});
-        fs.writeFile("./Ids.json", JSON.stringify(Ids), function(err){});
+        //fs.writeFile("./Ids.json", JSON.stringify(Ids), function(err){});
         console.log('New userId ' + context.session.user.id);
     }
     
@@ -59,18 +73,20 @@ bot.onEvent(async context => {
                 break;
             }
         }
-        fs.writeFile("./Ids.json", JSON.stringify(Ids), function(err){});
+        //fs.writeFile("./Ids.json", JSON.stringify(Ids), function(err){});
         console.log('Delete userId ' + context.session.user.id);
     }
 
     //for broadcast
-    else if (context.event.text.split('>>', 2)[0] == 'NTPC_agriculture_broadcast'){
-        broadcast('測試!\n' + context.event.text.split('>>', 2)[1]);
+    else if (context.event.text == "AT_TEST"){
+        broadcast(news());
     }
 
     //default reply
     else{
-        await context.sendText('不好意思，這裡只有土石流警戒時才會通知大家\n想和我有更多互動，請上FB搜尋"土石流守護神"');
+        const reply = chat(context.event.text);
+        console.log(reply);
+        await context.sendText(reply[Math.ceil(Math.random() * reply.length)]);
     }
     */
 });
