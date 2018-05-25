@@ -40,7 +40,8 @@ function chat(input){
 bot.onEvent(async context => {
     const userId = context.session.user.id;
     const reply = chat(context.event.text);
-    await context.sendText(reply[Math.ceil(Math.random * reply.length)]);
+    console.log(reply);
+    await context.sendText(reply[Math.ceil(Math.random() * reply.length)]);
     /* 
     //add new user
     if (context.event.isFollow){
