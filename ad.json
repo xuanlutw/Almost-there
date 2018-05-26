@@ -1,0 +1,35 @@
+{
+  "active":{
+    "hot":{
+      "0":{
+        "string":"水分攝取容易不足，請注意補充水分。您可能會對以下產品有興趣：",
+        "link":"https://www.hilife.taipei/activity/product/00001824"
+      }
+    },
+    "cold":{
+      "0":{
+        "string":"氣溫驟降時，請注意保暖。您可以能會對以下產品有興趣：",
+        "link":"https://buy.line.me/price/113247"
+      }
+    },
+    "humid":{
+      "0":{
+        "string":"易有過敏，請保持室內乾燥。您可能會對以下產品有興趣：",
+        "link":"https://buy.line.me/price/80921"
+      }
+    },
+    "dry":{
+      "0":{
+        "string":"天乾物燥，請注意皮膚保溼。您可能會對以下產品有興趣：",
+        "link":"https://buy.line.me/price/95511"
+      }
+    },
+    "lowpressure":{
+      "0":{
+        "string":"低氣壓易有心血管疾病，請有相關病史者注意身體健康。您可能會對以下產品有興趣：",
+        "link":"https://buy.line.me/price/78325"
+      }
+    }
+  }
+  
+}
