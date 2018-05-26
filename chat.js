@@ -39,7 +39,7 @@ for(i in b['active'])for(j in b['active'][i]){
 }
 
 function news() {
-	return content[Math.floor((Math.random() * bc_content.length) + 1)]
+	return content[Math.floor((Math.random() * bc_content.length))]
 }
 
 //================ ad =======================
@@ -48,9 +48,7 @@ const sponsor_content = []
 for(i in c)for(j in c[i]){
 	sponsor_content.push(c[i][j]['0']['string']+c[i][j]['0']['link'])
 }
-
-console.log(sponsor_content)
+// console.log(sponsor_content)
 function sponsor(){
-	return sponsor_content[Math.floor((Math.random() * sponsor_content.length) + 1)]
+	return sponsor_content[Math.floor((Math.random() * sponsor_content.length))]
 }
-
