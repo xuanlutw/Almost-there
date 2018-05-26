@@ -52,6 +52,18 @@ for(i in b['active'])for(j in b['active'][i]){
 function news() {
 	return content[Math.floor((Math.random() * content.length) + 1)]
 }
+
+c = require('./ad.json')
+const sponsor_content = []
+for(i in c)for(j in c[i]){
+	sponsor_content.push(c[i][j]['0']['string']+c[i][j]['0']['link'])
+}
+
+//console.log(sponsor_content)
+function sponsor(){
+	return sponsor_content[Math.floor((Math.random() * sponsor_content.length) + 1)]
+}
+
 //======================================
 
 bot.onEvent(async context => {
@@ -80,6 +92,10 @@ bot.onEvent(async context => {
     //for broadcast
     else if (context.event.text == "AT_TEST"){
         broadcast(news());
+    }
+
+    else if (context.event.text == "AT_TEST_S"){
+        broadcast(sponsor());
     }
 
     //default reply
