@@ -45,9 +45,12 @@ function news() {
 //================ ad =======================
 c = require('./ad.json')
 const sponsor_content = []
-for(i in c){
-	sponsor_content.push(c[i][0]['string']+c[i][0]['link'])
+for(i in c)for(j in c[i]){
+	sponsor_content.push(c[i][j]['0']['string']+c[i][j]['0']['link'])
 }
+
+console.log(sponsor_content)
 function sponsor(){
-	return content[Math.floor((Math.random() * sponsor_content.length) + 1)]
+	return sponsor_content[Math.floor((Math.random() * sponsor_content.length) + 1)]
 }
+
