@@ -98,6 +98,10 @@ bot.onEvent(async context => {
         broadcast(sponsor());
     }
 
+    else if (context.event.text.split('>>', 2)[0] == 'AT_TEST'){
+        broadcast(context.event.text.split('>>', 2)[1]);
+    }
+
     //default reply
     else{
         const reply = chat(context.event.text);
