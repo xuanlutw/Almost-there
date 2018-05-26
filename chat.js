@@ -33,11 +33,21 @@ function welcome(){
 //=================== Broadcast ================
 
 b = require('./activerespond-2.json')
-const content = []
+const bc_content = []
 for(i in b['active'])for(j in b['active'][i]){
-	content.push(b['active'][i][j]['string'])
+	bc_content.push(b['active'][i][j]['string'])
 }
 
 function news() {
-	return content[Math.floor((Math.random() * content.length) + 1)]
+	return content[Math.floor((Math.random() * bc_content.length) + 1)]
+}
+
+//================ ad =======================
+c = require('./ad.json')
+const sponsor_content = []
+for(i in c){
+	sponsor_content.push(c[i][0]['string']+c[i][0]['link'])
+}
+function sponsor(){
+	return content[Math.floor((Math.random() * sponsor_content.length) + 1)]
 }
